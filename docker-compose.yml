@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+    # Service pour l'application Laravel
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: laravel-app
+        volumes:
+            - .:/var/www
+        ports:
+            - "8000:9000"
+        networks:
+            - app-network
+        environment:
+            - MAIL_MAILER=smtp
+            - MAIL_HOST=mailpit
+            - MAIL_PORT=1025
+            - MAIL_FROM_ADDRESS=no-reply@example.com
+            - MAIL_FROM_NAME="${APP_NAME}"
+
+    # Service pour Mailpit
+    mailpit:
+        image: axllent/mailpit
+        container_name: mailpit
+        ports:
+            - "8025:8025"
+            - "1025:1025"
+        networks:
+            - app-network
+
+    # Base de données MySQL (si nécessaire)
+    db:
+        image: mysql:8
+        container_name: mysql-db
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword
+            MYSQL_DATABASE: laravel
+        volumes:
+            - mysql_data:/var/lib/mysql
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    mysql_data:
+        driver: local

@@ -9,3 +9,4 @@ Route::get('/a-propos', [Controller::class, 'about'])->name('app.about');
 Route::get('/portfolio', [Controller::class, 'portfolio'])->name('app.portfolio');
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+

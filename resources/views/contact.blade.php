@@ -6,7 +6,6 @@
     <div class="container-fluid text-center">
         <p class="fs-1 fw-bold text-center p-5 text-uppercase">Contactez-moi</p>
 
-        
 	@if(session('success'))
             <div style="color: #029015;" class="mt-3 fs-3 mb-3 fw-bold">
                {{ session('success') }}

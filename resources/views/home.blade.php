@@ -13,6 +13,7 @@
     <!-- Navigation -->
     <nav class="my-8">
         <ul class="flex space-x-6">
+            <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
             <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
             <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
         </ul>
@@ -23,16 +24,14 @@
 
     <!-- Contenu principal -->
     <div class="text-center my-12">
-        <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">Antoine David</h1>
-        <p class="mt-4 text-sm sm:text-lg">
-            Développeur Web, Mobile et Desktop, Bloggeur, Programmeur.<br>
-            Bienvenue sur mon site, un portfolio pour vous montrer mon métier et mes compétences.
+        <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">ANTOINE David</h1>
+        <p class="mt-4 text-sm sm:text-lg">Développeur Web, Mobile et Desktop, Bloggeur, Programmeur.<br>Bienvenue sur mon site, un portfolio pour vous montrer mon métier et mes compétences.
         </p>
     </div>
 
     <!-- Section CV -->
     <div class="flex flex-col items-center my-8">
-        <h2 class="text-lg font-semibold">Mon CV</h2>
+        <h2 class="text-lg font-semibold">Mon CV ci-dessous</h2>
         <a href="https://www.unitag.io/qrcode" class="mt-4">
             <img src="{{ asset('images/CV.png') }}" alt="QR Code CV" class="rounded-lg w-48">
         </a>
@@ -40,6 +39,10 @@
 
     <!-- Ligne décorative -->
     <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
+        &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+    </footer>
 </div>
 </body>
 </html>

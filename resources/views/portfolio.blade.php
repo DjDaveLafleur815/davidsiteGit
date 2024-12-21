@@ -1,32 +1,83 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Découvrez mes projets et créations.">
+    <title>Portfolio - Antoine David</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-zinc-300">
+<!-- Conteneur principal -->
+<div class="flex flex-col items-center justify-center min-h-screen">
+    <!-- Navigation -->
+    <nav class="my-8">
+        <ul class="flex space-x-6">
+            <li><a href="/" class="text-sm hover:text-white">Accueil</a></li>
+            <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
+            <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
+            <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
+        </ul>
+    </nav>
 
-@section('title', 'Portfolio')
+    <!-- Ligne décorative -->
+    <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
 
-@section('content')
-    <div class="container-fluid text-center">
+    <!-- Contenu principal -->
+    <div class="text-center my-12">
+        <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">Portfolio</h1>
+        <p class="mt-4 text-sm sm:text-lg">
+            Découvrez mes créations et projets récents.
+        </p>
+    </div>
 
-        <p class="fs-1 fw-bold text-center pt-5 pb-1 text-uppercase">Portfolio</p>
-
-        <p class="fs-4 p-2 text-center">Vous trouverez ici toutes mes créations et projets</p>
-
-        <div class="container text-center">
-            <div class="row justify-content-evenly pt-3">
-                <div class="col-12 col-md-6 col-lg-3 pb-3 text-center">
-                    <img src="{{ asset('images/img_le_blog_de_batman.jpg') }}" class="img-thumbnail" alt="Le Blog De Batman">
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="{{ asset('images/img_nina_city.jpg') }}" class="img-thumbnail" alt="Nina City">
+    <!-- Section des projets -->
+    <div class="container mx-auto px-4 my-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Projet 1 -->
+            <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col items-center">
+                <img src="{{ asset('images/img_le_blog_de_batman.jpg') }}" alt="Le Blog De Batman" class="w-3/4 h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Le Blog De Batman</h5>
+                    <p class="text-sm mt-2">Site fait pendant la Formation Développeur Web et Web Mobile.</p>
                 </div>
             </div>
 
-            <div class="row justify-content-evenly pt-3">
-                <div class="col-12 col-md-6 col-lg-3 pb-4 text-center">
-                    <img src="{{ asset('images/ima_air_crash_disaster.jpg') }}" class="img-thumbnail" alt="Air Crash Disaster">
+            <!-- Projet 2 -->
+            <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col items-center">
+                <img src="{{ asset('images/img_nina_city.jpg') }}" alt="Nina City" class="w-3/4 h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Nina City</h5>
+                    <p class="text-sm mt-2">Projet de Soutenance de la Formation Développeur Web et Web Mobile.</p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 text-center">
-                    <img src="{{ asset('images/MonCV 2024.jpg') }}" class="img-thumbnail" alt="Mon CV">
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col items-center">
+                <img src="{{ asset('images/ima_air_crash_disaster.jpg') }}" alt="Air Crash Disaster" class="w-3/4 h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Air Crash Disaster</h5>
+                    <p class="text-sm mt-2">1er projet en solo toujours en cours de développement.</p>
+                </div>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col items-center">
+                <img src="{{ asset('images/MonCV 2024.jpg') }}" alt="Mon CV" class="w-3/4 h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Mon CV</h5>
+                    <p class="text-sm mt-2">Accessible également via le QR Code sur la page d'accueil.</p>
                 </div>
             </div>
         </div>
     </div>
-@endsection
+
+    <!-- Ligne décorative -->
+    <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
+        &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+    </footer>
+</div>
+</body>
+</html>

@@ -30,38 +30,38 @@
 
         <!-- Message de succès -->
         <div id="success-message" class="mt-3 text-green-600 text-2xl font-semibold hidden">
-            <!-- Le message de succès sera injecté ici via JavaScript si nécessaire -->
+            <!-- Le message de succès sera injecté ici via JavaScript -->
         </div>
 
         <!-- Formulaire de contact -->
         <form action="/contact/submit" method="POST" class="space-y-6">
-
+            @csrf
             <!-- Champ Nom -->
-            <div class="mb-4">
-                <label for="nom" class="block text-lg font-medium text-white">Nom</label>
-                <input type="text" name="nom" id="nom" class="w-full p-3 mt-2 border rounded-lg bg-zinc-700 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm hover:shadow-md transition duration-200" placeholder="Ex : Duchemin" required>
-                <div class="text-red-500 text-sm mt-1 hidden" id="error-nom">Veuillez entrer un nom valide.</div>
+            <div>
+                <label for="nom" class="block text-lg font-medium text-white text-center">Nom</label>
+                <input type="text" name="nom" id="nom" class="input-field" placeholder="Ex : Duchemin" required>
+                <div class="error-message hidden" id="error-nom">Veuillez entrer un nom valide.</div>
             </div>
 
             <!-- Champ Prénom -->
-            <div class="mb-4">
-                <label for="prenom" class="block text-lg font-medium text-white">Prénom</label>
-                <input type="text" name="prenom" id="prenom" class="w-full p-3 mt-2 border rounded-lg bg-zinc-700 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm hover:shadow-md transition duration-200" placeholder="Ex : Alice" required>
-                <div class="text-red-500 text-sm mt-1 hidden" id="error-prenom">Veuillez entrer un prénom valide.</div>
+            <div>
+                <label for="prenom" class="block text-lg font-medium text-white text-center">Prénom</label>
+                <input type="text" name="prenom" id="prenom" class="input-field" placeholder="Ex : Alice" required>
+                <div class="error-message hidden" id="error-prenom">Veuillez entrer un prénom valide.</div>
             </div>
 
             <!-- Champ Email -->
-            <div class="mb-4">
-                <label for="email" class="block text-lg font-medium text-white">Email</label>
-                <input type="email" name="email" id="email" class="w-full p-3 mt-2 border rounded-lg bg-zinc-700 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm hover:shadow-md transition duration-200" placeholder="Ex : alice.duchemin@mail.a" required>
-                <div class="text-red-500 text-sm mt-1 hidden" id="error-email">Veuillez entrer un email valide.</div>
+            <div>
+                <label for="email" class="block text-lg font-medium text-white text-center">Email</label>
+                <input type="email" name="email" id="email" class="input-field" placeholder="Ex : alice.duchemin@mail.a" required>
+                <div class="error-message hidden" id="error-email">Veuillez entrer un email valide.</div>
             </div>
 
             <!-- Champ Message -->
-            <div class="mb-4">
-                <label for="contenu" class="block text-lg font-medium text-white">Votre message</label>
-                <textarea name="contenu" id="contenu" rows="5" class="w-full p-3 mt-2 border rounded-lg bg-zinc-700 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm hover:shadow-md transition duration-200" placeholder="Écrivez votre message ici..." required></textarea>
-                <div class="text-red-500 text-sm mt-1 hidden" id="error-contenu">Veuillez entrer un message.</div>
+            <div>
+                <label for="contenu" class="block text-lg font-medium text-white text-center">Votre message</label>
+                <textarea name="contenu" id="contenu" rows="5" class="input-field" placeholder="Écrivez votre message ici..." required></textarea>
+                <div class="error-message hidden" id="error-contenu">Veuillez entrer un message.</div>
             </div>
 
             <!-- Bouton Envoyer -->
@@ -70,60 +70,71 @@
             </button>
         </form>
     </div>
-
-    <script>
-        // Simuler un message de succès
-        // Décommentez la ligne suivante pour tester le message de succès
-        document.getElementById('success-message').classList.remove('hidden');
-        document.getElementById('success-message').textContent = 'Votre message a bien été envoyé !';
-
-        // Validation simple pour afficher les erreurs
-        document.querySelector('form').addEventListener('submit', function(e) {
-            let valid = true;
-
-            // Vérification du champ nom
-            const nom = document.getElementById('nom');
-            if (!nom.value) {
-                valid = false;
-                document.getElementById('error-nom').classList.remove('hidden');
-            } else {
-                document.getElementById('error-nom').classList.add('hidden');
-            }
-
-            // Vérification du champ prénom
-            const prenom = document.getElementById('prenom');
-            if (!prenom.value) {
-                valid = false;
-                document.getElementById('error-prenom').classList.remove('hidden');
-            } else {
-                document.getElementById('error-prenom').classList.add('hidden');
-            }
-
-            // Vérification de l'email
-            const email = document.getElementById('email');
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!email.value || !emailPattern.test(email.value)) {
-                valid = false;
-                document.getElementById('error-email').classList.remove('hidden');
-            } else {
-                document.getElementById('error-email').classList.add('hidden');
-            }
-
-            // Vérification du contenu du message
-            const contenu = document.getElementById('contenu');
-            if (!contenu.value) {
-                valid = false;
-                document.getElementById('error-contenu').classList.remove('hidden');
-            } else {
-                document.getElementById('error-contenu').classList.add('hidden');
-            }
-
-            // Si des erreurs, empêcher l'envoi
-            if (!valid) {
-                e.preventDefault();
-            }
-        });
-    </script>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', (e) => {
+            let isValid = true;
+
+            // Vérification de chaque champ
+            document.querySelectorAll('.input-field').forEach((field) => {
+                const errorElement = document.getElementById(`error-${field.id}`);
+                if (!field.value || (field.id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))) {
+                    errorElement.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    errorElement.classList.add('hidden');
+                }
+            });
+
+            // Si des erreurs sont détectées, on empêche la soumission
+            if (!isValid) {
+                e.preventDefault();
+                return;
+            }
+
+            // Afficher le message de succès et réinitialiser le formulaire
+            successMessage.textContent = 'Votre message a bien été envoyé !';
+            successMessage.classList.remove('hidden');
+            form.reset();
+
+            // Masquer le message après 5 secondes
+            setTimeout(() => successMessage.classList.add('hidden'), 5000);
+
+            // Empêche la soumission réelle pour cette démo (à retirer en production)
+            e.preventDefault();
+        });
+    });
+</script>
+
+<style>
+    .input-field {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+        border: 1px solid transparent;
+        border-radius: 0.375rem;
+        background-color: #374151;
+        color: #ffffff;
+        placeholder-color: #9CA3AF;
+        transition: box-shadow 0.2s;
+    }
+
+    .input-field:focus {
+        outline: none;
+        border-color: #3B82F6;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+    }
+
+    .error-message {
+        color: #F87171;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+</style>
 </body>
 </html>

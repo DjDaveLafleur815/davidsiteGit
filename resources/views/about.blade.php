@@ -42,7 +42,9 @@
 
     <!-- Section Langages -->
     <div class="my-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8 leading-tight">Les différents langages, frameworks et environnements de travail que je suis capable d'utiliser :</h2>
+        <div class="flex flex-col items-center justify-center my-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8 leading-tight max-w-4xl">Les différents langages, frameworks et environnements de travail que je suis capable d'utiliser :</h2>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="flex justify-center">
                 <img src="{{ asset('images/html-css-js.png') }}" class="rounded-lg shadow-md hover:shadow-lg transition duration-300 w-32 h-auto object-contain" alt="Logos HTML, CSS et JavaScript">

@@ -28,7 +28,7 @@
 
     <!-- Contenu principal -->
     <div class="text-center my-12">
-        <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">Portfolio</h1>
+        <h3 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">Portfolio</h3>
         <p class="mt-4 text-sm sm:text-lg">
             Découvrez mes créations et projets récents.
         </p>

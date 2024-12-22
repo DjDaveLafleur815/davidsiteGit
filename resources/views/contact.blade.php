@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-zinc-300">
-<div class="flex flex-col items-center justify-center min-h-screen">
+<div class="flex flex-col items-center justify-center min-h-screen px-4 py-4">
 
     <!-- Navigation -->
     <nav class="my-8">
@@ -70,8 +70,14 @@
             </button>
         </form>
     </div>
-</div>
 
+</div>
+<!-- Ligne décorative -->
+<div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
+<!-- Footer -->
+<footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
+    &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+</footer>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelector('form');

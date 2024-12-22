@@ -19,7 +19,8 @@
             <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
         </ul>
     </nav>
-
+    <!-- Ligne décorative -->
+    <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
     <!-- Conteneur du formulaire -->
     <div class="max-w-xl w-full bg-zinc-800 p-8 rounded-lg shadow-lg">
 
@@ -29,7 +30,7 @@
         </div>
 
         <!-- Message de succès -->
-        <div id="success-message" class="mt-3 text-green-600 text-2xl font-semibold hidden">
+        <div id="success-message" class="mt-3 text-green-600 text-2xl font-semibold hidden text-center">
             <!-- Le message de succès sera injecté ici via JavaScript -->
         </div>
 

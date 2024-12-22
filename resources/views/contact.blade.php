@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,8 +37,7 @@
 
         <!-- Formulaire de contact -->
         <form action="/contact/submit" method="POST" class="space-y-6">
-            @csrf
-            <!-- Champ Nom -->
+            <input type="hidden" name="_token" value="gAfE7SJFDCFGpPooVVmiAxuRByrUvL2FtR6niiT9" autocomplete="off">            <!-- Champ Nom -->
             <div>
                 <label for="nom" class="block text-lg font-medium text-white text-center">Nom</label>
                 <input type="text" name="nom" id="nom" class="input-field" placeholder="Ex : Duchemin" required>

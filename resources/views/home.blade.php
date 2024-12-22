@@ -6,43 +6,158 @@
     <meta name="description" content="Développeur web, mobile et desktop. Découvrez mon portfolio et mon CV.">
     <title>Accueil - Antoine David</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fond étoilé */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #ccc;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out, move 20s linear infinite;
+        }
+
+        /* Scintillement */
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        /* Mouvement des étoiles */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100px, 100px);
+            }
+        }
+
+        /* Ligne décorative */
+        .line {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ffffff50, transparent);
+        }
+
+        /* Animations de texte */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                transform: scale(1.3);
+                filter: blur(10px);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+                filter: blur(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-text {
+            animation: textReveal 2s ease-out forwards;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+    </style>
 </head>
-<body class="bg-black text-zinc-300">
-<!-- Conteneur principal -->
-<div class="flex flex-col items-center justify-center min-h-screen">
-    <!-- Navigation -->
-    <nav class="my-8">
-        <ul class="flex space-x-6">
-            <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
-            <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
-            <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
-        </ul>
-    </nav>
+<body class="flex flex-col min-h-screen">
+    <!-- Fond étoilé -->
+    <div id="stars-container" class="stars"></div>
 
-    <!-- Ligne décorative -->
-    <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
+    <!-- Conteneur principal -->
+    <div class="flex flex-col items-center justify-center flex-grow relative z-10">
+        <!-- Navigation -->
+        <nav class="my-8 fade-in" style="animation-delay: 0.5s;">
+            <ul class="flex space-x-6">
+                <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
+                <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
+                <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- Contenu principal -->
-    <div class="text-center my-12">
-        <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">ANTOINE David</h1>
-        <p class="mt-4 text-sm sm:text-lg">Développeur Web, Mobile et Desktop, Bloggeur, Programmeur.<br>Bienvenue sur mon site, un portfolio pour vous montrer mon métier et mes compétences.
-        </p>
+        <!-- Ligne décorative supérieure -->
+        <div class="line fade-in w-full" style="animation-delay: 1s;"></div>
+
+        <!-- Contenu principal -->
+        <div class="text-center my-8">
+            <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl animate-text">ANTOINE David</h1>
+            <p class="mt-4 text-sm sm:text-lg fade-in" style="animation-delay: 2.5s;">
+                Développeur Web, Mobile et Desktop, Bloggeur, Programmeur.<br>
+                Bienvenue sur mon site, un portfolio pour vous montrer mon métier et mes compétences.
+            </p>
+        </div>
+
+        <!-- Section CV -->
+        <div class="flex flex-col items-center my-8 fade-in" style="animation-delay: 3.5s;">
+            <h2 class="text-lg font-semibold">Mon CV ci-dessous</h2>
+            <a href="https://www.unitag.io/qrcode" class="mt-4">
+                <img src="https://davidantoine.zapto.org/images/CV.png" alt="QR Code CV" class="rounded-lg w-48">
+            </a>
+        </div>
+
+        <!-- Ligne décorative inférieure -->
+        <div class="line fade-in w-full" style="animation-delay: 3s;"></div>
     </div>
 
-    <!-- Section CV -->
-    <div class="flex flex-col items-center my-8">
-        <h2 class="text-lg font-semibold">Mon CV ci-dessous</h2>
-        <a href="https://www.unitag.io/qrcode" class="mt-4">
-            <img src="{{ asset('images/CV.png') }}" alt="QR Code CV" class="rounded-lg w-48">
-        </a>
-    </div>
-
-    <!-- Ligne décorative -->
-    <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
     <!-- Footer -->
-    <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
+    <footer class="text-center text-xs text-zinc-500 fade-in py-4" style="animation-delay: 5s;">
         &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
     </footer>
-</div>
+
+    <!-- Script pour créer les étoiles -->
+    <script>
+        const starContainer = document.getElementById('stars-container');
+        const starCount = 150; // Nombre d'étoiles
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = Math.random() * 200 + 'vh'; // Position verticale aléatoire
+            star.style.left = Math.random() * 200 + 'vw'; // Position horizontale aléatoire
+            star.style.animationDuration = Math.random() * 5 + 5 + 's'; // Durée de scintillement aléatoire
+            star.style.animationDelay = Math.random() * 5 + 's'; // Délai de scintillement aléatoire
+            starContainer.appendChild(star);
+        }
+    </script>
 </body>
 </html>

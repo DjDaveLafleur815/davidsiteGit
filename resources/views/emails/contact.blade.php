@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Nouveau message de contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau message</title>
 </head>
 <body>
-    <h1>Nouveau message de contact</h1>
-    <p><strong>Nom :</strong> {{ $nom }}</p>
-<p><strong>Prénom :</strong> {{ $prenom }}</p>
-<p><strong>E-mail :</strong> {{ $email }}</p>
+<h1>Vous avez reçu un nouveau message de contact</h1>
+<p><strong>Nom :</strong> {{ $data['name'] }}</p>
+<p><strong>Email :</strong> {{ $data['email'] }}</p>
 <p><strong>Message :</strong></p>
-<p>{{ $contenu }}</p>
+<p>{{ $data['message'] }}</p>
 </body>
 </html>

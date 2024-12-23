@@ -20,18 +20,21 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        // Valider les données
-        $validated = $request->validate([
+        // Valider les données du formulaire
+        $validatedData = $request->validate([
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'contenu' => 'required|string',
+            'email' => 'required|email',
+            'message' => 'required|string',
         ]);
 
-        // Enregistrer dans la base de données
-        Contact::create($validated);
+        // Enregistrer les données dans la base de données
+        Contact::create($validatedData);
 
-        // Retourner un message de succès
-        return redirect()->route('contact.show')->with('success', 'Votre message a bien été envoyé !');
+        // Envoyer l'email
+        Mail::to('ton_adresse_email@gmail.com')->send(new ContactFormMail($validatedData));
+
+        // Rediriger avec un message de succès
+        return redirect()->back()->with('success', 'Votre message a été envoyé avec succès.');
     }
 }

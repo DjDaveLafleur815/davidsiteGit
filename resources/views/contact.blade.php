@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,10 +6,93 @@
     <meta name="description" content="Contactez-moi pour toute demande.">
     <title>Contactez-moi - Antoine David</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #ccc;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out, move 20s linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100px, 100px);
+            }
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: 1px solid transparent;
+            border-radius: 0.375rem;
+            background-color: #374151;
+            color: #ffffff;
+            placeholder-color: #9CA3AF;
+            transition: box-shadow 0.2s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+        }
+
+        .error-message {
+            color: #F87171;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
 </head>
 <body class="bg-black text-zinc-300">
-<div class="flex flex-col items-center justify-center min-h-screen px-4 py-4">
+<!-- Fond étoilé -->
+<div class="stars">
+    <!-- Création des étoiles dynamiques -->
+    <div class="star" style="top: 10%; left: 20%;"></div>
+    <div class="star" style="top: 50%; left: 40%;"></div>
+    <div class="star" style="top: 30%; left: 80%;"></div>
+    <div class="star" style="top: 70%; left: 60%;"></div>
+    <div class="star" style="top: 90%; left: 10%;"></div>
+    <!-- Ajoutez plus d'étoiles ici selon vos besoins -->
+</div>
 
+<div class="flex flex-col items-center justify-center min-h-screen px-4 py-4">
     <!-- Navigation -->
     <nav class="my-8">
         <ul class="flex space-x-6">
@@ -24,20 +106,18 @@
     <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
     <!-- Conteneur du formulaire -->
     <div class="max-w-xl w-full bg-zinc-800 p-8 rounded-lg shadow-lg">
-
         <!-- Titre -->
         <div class="text-center mb-6">
             <h3 class="text-4xl font-bold text-white sm:text-5xl">Contactez-moi</h3>
         </div>
-
         <!-- Message de succès -->
         <div id="success-message" class="mt-3 text-green-600 text-2xl font-semibold hidden text-center">
             <!-- Le message de succès sera injecté ici via JavaScript -->
         </div>
-
         <!-- Formulaire de contact -->
         <form action="/contact/submit" method="POST" class="space-y-6">
-            <input type="hidden" name="_token" value="gAfE7SJFDCFGpPooVVmiAxuRByrUvL2FtR6niiT9" autocomplete="off">            <!-- Champ Nom -->
+            <input type="hidden" name="_token" value="gAfE7SJFDCFGpPooVVmiAxuRByrUvL2FtR6niiT9" autocomplete="off">
+            <!-- Champ Nom -->
             <div>
                 <label for="nom" class="block text-lg font-medium text-white text-center">Nom</label>
                 <input type="text" name="nom" id="nom" class="input-field" placeholder="Ex : Duchemin" required>
@@ -71,7 +151,6 @@
             </button>
         </form>
     </div>
-
 </div>
 <!-- Ligne décorative -->
 <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
@@ -79,6 +158,9 @@
 <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
     &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
 </footer>
+<!-- Inclure le bouton "Scroll To Top" -->
+@include('partials.scroll-to-top')
+<!-- Script pour le bouton "Scroll To Top" -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelector('form');
@@ -117,31 +199,5 @@
         });
     });
 </script>
-
-<style>
-    .input-field {
-        width: 100%;
-        padding: 0.75rem;
-        margin-top: 0.5rem;
-        border: 1px solid transparent;
-        border-radius: 0.375rem;
-        background-color: #374151;
-        color: #ffffff;
-        placeholder-color: #9CA3AF;
-        transition: box-shadow 0.2s;
-    }
-
-    .input-field:focus {
-        outline: none;
-        border-color: #3B82F6;
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
-    }
-
-    .error-message {
-        color: #F87171;
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-    }
-</style>
 </body>
 </html>

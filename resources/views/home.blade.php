@@ -18,8 +18,8 @@
 
         .stars {
             position: absolute;
-            width: 200%;
-            height: 200%;
+            width: 100%;
+            height: 100%;
             background: transparent;
             z-index: 1;
         }
@@ -102,10 +102,10 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Fond étoilé -->
-    <div id="stars-container" class="stars"></div>
+    <div id="stars-container" class="stars w-full h-full"></div>
 
     <!-- Conteneur principal -->
-    <div class="flex flex-col items-center justify-center flex-grow relative z-10">
+    <div class="flex flex-col items-center justify-center flex-grow relative z-10 w-full">
         <!-- Navigation -->
         <nav class="my-8 fade-in" style="animation-delay: 0.5s;">
             <ul class="flex space-x-6">
@@ -140,7 +140,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-zinc-500 fade-in py-4" style="animation-delay: 5s;">
+    <footer class="text-center text-xs text-zinc-500 fade-in py-4 w-full" style="animation-delay: 5s;">
         &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
     </footer>
 
@@ -152,8 +152,8 @@
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
-            star.style.top = Math.random() * 200 + 'vh'; // Position verticale aléatoire
-            star.style.left = Math.random() * 200 + 'vw'; // Position horizontale aléatoire
+            star.style.top = Math.random() * 100 + 'vh'; // Position verticale aléatoire
+            star.style.left = Math.random() * 100 + 'vw'; // Position horizontale aléatoire
             star.style.animationDuration = Math.random() * 5 + 5 + 's'; // Durée de scintillement aléatoire
             star.style.animationDelay = Math.random() * 5 + 's'; // Délai de scintillement aléatoire
             starContainer.appendChild(star);

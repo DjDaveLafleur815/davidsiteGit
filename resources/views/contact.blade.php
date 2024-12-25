@@ -115,8 +115,8 @@
             <!-- Le message de succès sera injecté ici via JavaScript -->
         </div>
         <!-- Formulaire de contact -->
-        <form action="/contact/submit" method="POST" class="space-y-6">
-            <input type="hidden" name="_token" value="gAfE7SJFDCFGpPooVVmiAxuRByrUvL2FtR6niiT9" autocomplete="off">
+        <form action="/contact" method="POST" class="space-y-6">
+            @csrf
             <!-- Champ Nom -->
             <div>
                 <label for="nom" class="block text-lg font-medium text-white text-center">Nom</label>

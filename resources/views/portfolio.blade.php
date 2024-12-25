@@ -168,7 +168,7 @@
             <!-- Projet 4 (CV) -->
             <div class="bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center">
                 <div class="p-4 text-center">
-                    <a href="{{ asset("pdf/MonCV-2024.pdf") }}" download>
+                    <a href="{{ asset("pdf/MonCV II 2024.pdf") }}" download>
                         <button type="button" class="bg-zinc-700 text-white px-4 py-2 rounded-md hover:bg-zinc-600">
                             <h4 class="text-lg font-semibold">Mon CV en PDF</h4>
                         </button>

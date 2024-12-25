@@ -2,39 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    /**
-     * Affiche le formulaire de contact.
-     */
     public function showForm()
     {
-        return view('contact'); // Assurez-vous que la vue 'contact' existe dans resources/views
+        return view('contact');
     }
 
-    /**
-     * Traite la soumission du formulaire de contact.
-     */
-    public function store(Request $request)
+    public function submitForm(Request $request)
     {
-        // Valider les données du formulaire
-        $validatedData = $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom' => 'required|string|max:255',
+        \Log::info('Form submitted'); // Ajouter un log ici pour vérifier
+        $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
             'email' => 'required|email',
-            'message' => 'required|string',
+            'contenu' => 'required',
         ]);
 
-        // Enregistrer les données dans la base de données
-        Contact::create($validatedData);
+        // Envoyer l'email via Mailpit
+        Mail::to('davidantoine815@yahoo.com')->send(new ContactMail($request->all()));
 
-        // Envoyer l'email
-        Mail::to('ton_adresse_email@gmail.com')->send(new ContactFormMail($validatedData));
-
-        // Rediriger avec un message de succès
-        return redirect()->back()->with('success', 'Votre message a été envoyé avec succès.');
+        // Rediriger l'utilisateur avec un message de succès
+        return back()->with('success', 'Votre message a bien été envoyé !');
     }
+
 }

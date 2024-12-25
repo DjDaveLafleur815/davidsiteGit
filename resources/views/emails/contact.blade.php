@@ -2,13 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Nouveau message de contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message de contact</title>
 </head>
 <body>
-<h1>Vous avez reçu un nouveau message de contact</h1>
-<p><strong>Nom:</strong> {{ $data['nom'] }}</p>
-<p><strong>Prénom:</strong> {{ $data['prenom'] }}</p>
-<p><strong>Email:</strong> {{ $data['email'] }}</p>
-<p><strong>Message:</strong> {{ $data['contenu'] }}</p>
+<h1>Vous avez reçu un message de {{ $nom }} {{ $prenom }}</h1>
+<p>Email : {{ $email }}</p>
+<p>Message : {{ $contenu }}</p>
 </body>
 </html>

@@ -111,8 +111,10 @@
             <h3 class="text-4xl font-bold text-white sm:text-5xl">Contactez-moi</h3>
         </div>
         <!-- Message de succès -->
-        <div id="success-message" class="mt-3 text-green-600 text-2xl font-semibold hidden text-center">
-            <!-- Le message de succès sera injecté ici via JavaScript -->
+        <div class="mt-3 text-green-600 text-2xl font-semibold text-center">
+            @if (session('success'))
+                {{ session('success') }}
+            @endif
         </div>
         <!-- Formulaire de contact -->
         <form action="/contact" method="POST" class="space-y-6">

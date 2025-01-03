@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Développeur web, mobile et desktop. Découvrez mon portfolio et mon CV.">
-    <title>Accueil - Antoine David</title>
+    <title>@lang('messages.home') - ANTOINE David</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Fond étoilé */
@@ -107,12 +107,25 @@
     <!-- Conteneur principal -->
     <div class="flex flex-col items-center justify-center flex-grow relative z-10 w-full">
         <!-- Navigation -->
-        <nav class="my-8 fade-in" style="animation-delay: 0.5s;">
-            <ul class="flex space-x-6">
-                <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
-                <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
-                <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
-            </ul>
+        <nav class="my-8 fade-in flex justify-between items-center" style="animation-delay: 0.5s;">
+            <!-- Conteneur pour centrer le menu -->
+            <div class="flex-1 flex justify-center">
+                <!-- Menu principal -->
+                <ul class="flex space-x-6">
+                    <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
+                    <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
+                    <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
+                </ul>
+            </div>
+
+            <!-- Switcher de langues à droite du menu -->
+            <div class="flex space-x-2 ml-20 items-center">
+                <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
+                <span>|</span>
+                <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>
+                <span>|</span>
+                <a href="{{ url('locale/de') }}" class="text-sm hover:text-white font-semibold">DE</a>
+            </div>
         </nav>
 
         <!-- Ligne décorative supérieure -->
@@ -122,14 +135,13 @@
         <div class="text-center my-8">
             <h1 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl animate-text">ANTOINE David</h1>
             <p class="mt-4 text-sm sm:text-lg fade-in" style="animation-delay: 2.5s;">
-                Développeur Web, Mobile et Desktop, Bloggeur, Programmeur.<br>
-                Bienvenue sur mon site, un portfolio pour vous montrer mon métier et mes compétences.
+                @lang('messages.welcome')<br>@lang('messages.text')
             </p>
         </div>
 
         <!-- Section CV -->
         <div class="flex flex-col items-center my-8 fade-in" style="animation-delay: 3.5s;">
-            <h2 class="text-lg font-semibold">Mon CV ci-dessous</h2>
+            <h2 class="text-lg font-semibold">@lang('messages.cv')</h2>
             <a href="https://www.unitag.io/qrcode" class="mt-4">
                 <img src="https://davidantoine.zapto.org/images/CV.png" alt="QR Code CV" class="rounded-lg w-48">
             </a>
@@ -141,7 +153,7 @@
 
     <!-- Footer -->
     <footer class="text-center text-xs text-zinc-500 fade-in py-4 w-full" style="animation-delay: 5s;">
-        &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+        &copy; {{ date('d/m/y H:i') }} ANTOINE David. @lang('messages.allrights')
     </footer>
 
     <!-- Script pour créer les étoiles -->

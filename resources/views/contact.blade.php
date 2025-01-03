@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contactez-moi pour toute demande.">
-    <title>Contactez-moi - Antoine David</title>
+    <title>@lang('messages.titleContact') - ANTOINE David</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -92,23 +92,38 @@
     <!-- Ajoutez plus d'étoiles ici selon vos besoins -->
 </div>
 
+<!-- Conteneur principal -->
 <div class="flex flex-col items-center justify-center min-h-screen px-4 py-4">
     <!-- Navigation -->
-    <nav class="my-8">
-        <ul class="flex space-x-6">
-            <li><a href="/" class="text-sm hover:text-white">Accueil</a></li>
-            <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
-            <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
-            <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
-        </ul>
+    <nav class="my-8 fade-in flex justify-between items-center" style="animation-delay: 0.5s;">
+        <!-- Conteneur pour centrer le menu -->
+        <div class="flex-1 flex justify-center">
+            <!-- Menu principal -->
+            <ul class="flex space-x-6">
+                <li><a href="/" class="text-sm hover:text-white">@lang('messages.home')</a></li>
+                <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
+                <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
+                <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
+            </ul>
+        </div>
+
+        <!-- Switcher de langues à droite du menu -->
+        <div class="flex space-x-2 ml-20 items-center">
+            <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
+            <span>|</span>
+            <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>
+            <span>|</span>
+            <a href="{{ url('locale/de') }}" class="text-sm hover:text-white font-semibold">DE</a>
+        </div>
     </nav>
+
     <!-- Ligne décorative -->
     <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
     <!-- Conteneur du formulaire -->
     <div class="max-w-xl w-full bg-zinc-800 p-8 rounded-lg shadow-lg">
         <!-- Titre -->
         <div class="text-center mb-6">
-            <h3 class="text-4xl font-bold text-white sm:text-5xl">Contactez-moi</h3>
+            <h3 class="text-4xl font-bold text-white sm:text-5xl">@lang('messages.titleContact')</h3>
         </div>
         <!-- Message de succès -->
         <div class="mt-3 text-green-600 text-2xl font-semibold text-center">
@@ -121,36 +136,34 @@
             @csrf
             <!-- Champ Nom -->
             <div>
-                <label for="nom" class="block text-lg font-medium text-white text-center">Nom</label>
-                <input type="text" name="nom" id="nom" class="input-field" placeholder="Ex : Duchemin" required>
-                <div class="error-message hidden" id="error-nom">Veuillez entrer un nom valide.</div>
+                <label for="nom" class="block text-lg font-medium text-white text-center">@lang('messages.name')</label>
+                <input type="text" name="nom" id="nom" class="input-field" placeholder="@lang('messages.nameText')" required>
+                <div class="error-message hidden" id="error-nom">@lang('messages.error-nom')</div>
             </div>
 
             <!-- Champ Prénom -->
             <div>
-                <label for="prenom" class="block text-lg font-medium text-white text-center">Prénom</label>
-                <input type="text" name="prenom" id="prenom" class="input-field" placeholder="Ex : Alice" required>
-                <div class="error-message hidden" id="error-prenom">Veuillez entrer un prénom valide.</div>
+                <label for="prenom" class="block text-lg font-medium text-white text-center">@lang('messages.firstname')</label>
+                <input type="text" name="prenom" id="prenom" class="input-field" placeholder="@lang('messages.firstnameText')" required>
+                <div class="error-message hidden" id="error-prenom">@lang('messages.error-prenom')</div>
             </div>
 
             <!-- Champ Email -->
             <div>
-                <label for="email" class="block text-lg font-medium text-white text-center">Email</label>
-                <input type="email" name="email" id="email" class="input-field" placeholder="Ex : alice.duchemin@mail.a" required>
-                <div class="error-message hidden" id="error-email">Veuillez entrer un email valide.</div>
+                <label for="email" class="block text-lg font-medium text-white text-center">@lang('messages.email')</label>
+                <input type="email" name="email" id="email" class="input-field" placeholder="@lang('messages.emailText')" required>
+                <div class="error-message hidden" id="error-email">@lang('messages.error-email')</div>
             </div>
 
             <!-- Champ Message -->
             <div>
-                <label for="contenu" class="block text-lg font-medium text-white text-center">Votre message</label>
-                <textarea name="contenu" id="contenu" rows="5" class="input-field" placeholder="Écrivez votre message ici..." required></textarea>
-                <div class="error-message hidden" id="error-contenu">Veuillez entrer un message.</div>
+                <label for="contenu" class="block text-lg font-medium text-white text-center">@lang('messages.content')</label>
+                <textarea name="contenu" id="contenu" rows="5" class="input-field" placeholder="@lang('messages.contentText')" required></textarea>
+                <div class="error-message hidden" id="error-contenu">@lang('messages.error-content')</div>
             </div>
 
             <!-- Bouton Envoyer -->
-            <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 shadow-md hover:shadow-xl">
-                Envoyer
-            </button>
+            <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 shadow-md hover:shadow-xl">@lang('messages.buttonText')</button>
         </form>
     </div>
 </div>
@@ -158,7 +171,7 @@
 <div class="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"></div>
 <!-- Footer -->
 <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
-    &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+    &copy; {{ date('d/m/y H:i') }} ANTOINE David. @lang('messages.allrights')
 </footer>
 <!-- Inclure le bouton "Scroll To Top" -->
 @include('partials.scroll-to-top')

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Développeur web, mobile et desktop. Découvrez mon portfolio et mon CV.">
-    <title>À Propos - Antoine David</title>
+    <title>@lang('messages.about') - ANTOINE David</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -109,13 +109,26 @@
     <!-- Conteneur principal -->
     <div class="flex flex-col items-center justify-center min-h-screen px-4">
         <!-- Navigation -->
-        <nav class="my-8">
-            <ul class="flex space-x-6">
-                <li><a href="/" class="text-sm hover:text-white">Accueil</a></li>
-                <li><a href="/a-propos" class="text-sm hover:text-white">À Propos</a></li>
-                <li><a href="/portfolio" class="text-sm hover:text-white">Portfolio</a></li>
-                <li><a href="/contact" class="text-sm hover:text-white">Contact</a></li>
-            </ul>
+        <nav class="my-8 fade-in flex justify-between items-center" style="animation-delay: 0.5s;">
+            <!-- Conteneur pour centrer le menu -->
+            <div class="flex-1 flex justify-center">
+                <!-- Menu principal -->
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="text-sm hover:text-white">@lang('messages.home')</a></li>
+                    <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
+                    <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
+                    <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
+                </ul>
+            </div>
+
+            <!-- Switcher de langues à droite du menu -->
+            <div class="flex space-x-2 ml-20 items-center">
+                <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
+                <span>|</span>
+                <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>
+                <span>|</span>
+                <a href="{{ url('locale/de') }}" class="text-sm hover:text-white font-semibold">DE</a>
+            </div>
         </nav>
 
         <!-- Ligne décorative -->
@@ -123,7 +136,7 @@
 
         <!-- Contenu principal -->
         <div class="text-center my-12">
-            <h3 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">Qui suis-je ?</h3>
+            <h3 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">@lang('messages.titleAbout')</h3>
         </div>
 
         <!-- Section Photo de Profil -->
@@ -132,14 +145,14 @@
                 <img src="{{ asset('images/photoDeMoi.jpg') }}" class="rounded-lg shadow-md w-full h-auto object-cover hover:shadow-lg transition duration-300" alt="Photo de moi">
             </div>
             <div class="md:w-2/3 text-lg leading-relaxed text-justify">
-            Passionné par l'informatique le numérique et la programmation en général, j’ai suivi une filière STI2D option SIN (Systèmes Informatiques et Numériques). J’y ai appris les bases de HTML et CSS, le réseau informatique, le code binaire avec des conversions de base, etc. À partir de là, l’idée d’être développeur web m’est apparue comme une évidence, surtout le côté programmation. Puis, après avoir quitté les études pour raisons personnelles, j’ai été stagiaire à Une Formation Pour Moi, c’est Possible ? par OnlineFormaPRO à Dijon.<br>Ensuite, c’est écoulé 2 années de pandémie où ne trouvant pas de formation à proprement parler, j’ai suivi pas mal de dispositifs, du Digital’Access à Fabrik Ton Parcours en passant par la Garantie Jeune et l’E2C (École de la 2ème chance) ainsi que le Contrat Engagement Jeune. Après Fabrik Ton Parcours (préparation aux métiers du sport, de l’animation et du numérique), j’ai finalement entamé une formation Développeur Web et Web Mobile par Web Force 3 à l’issue de laquelle j’ai effectué un stage, à savoir la création d’un site internet en intégrant les recommandations de sécurité pour mon association de musique, ayant obtenu avec succès le Titre Professionnel Développeur Web et Web Mobile de niveau 5 (BAC + 2).<br>Après cette formation, sur les conseils du jury lors du passage du Titre Professionnel, j’ai suivi la formation Concepteur Développeur d’Applications durant laquelle j’ai effectué ce stage dans le laboratoire CIAD, une antenne de l’Université de Bourgogne-Franche-Comté ayant obtenu avec succès la Certification Développement d'Applications pour enchaîner sur un Bachelor Développeur Full Stack (BAC+3) enfin finir sur un master IA & DATA (BAC+5). Je suis également depuis bientôt 10 ans musicien en fanfare, batterie-fanfare, harmonie et dans plusieurs projets musicaux en tout genre (rock, metal, électro, etc...)</p>
+                @lang('messages.bio')
             </div>
         </div>
 
     <!-- Section Langages -->
     <div class="my-16">
         <div class="flex flex-col items-center justify-center my-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8 leading-tight max-w-4xl">Les différents langages, frameworks et environnements de travail que je suis capable d'utiliser :</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white text-center mb-8 leading-tight max-w-4xl">@lang('messages.h2text')</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="flex justify-center">
@@ -186,7 +199,7 @@
 
         <!-- Footer -->
         <footer class="container mx-auto px-4 py-4 text-center text-xs text-zinc-500">
-            &copy; {{ date('d/m/y H:i') }} Antoine David. Tous droits réservés.
+            &copy; {{ date('d/m/y H:i') }} ANTOINE David. @lang('messages.allrights')
         </footer>
     </div>
 

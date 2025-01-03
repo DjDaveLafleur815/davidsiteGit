@@ -143,7 +143,7 @@
         <div class="flex flex-col items-center my-8 fade-in" style="animation-delay: 3.5s;">
             <h2 class="text-lg font-semibold">@lang('messages.cv')</h2>
             <a href="https://www.unitag.io/qrcode" class="mt-4">
-                <img src="https://davidantoine.zapto.org/images/CV.png" alt="QR Code CV" class="rounded-lg w-48">
+                <img src="https://davidantoine.zapto.org/images/cv2.png" alt="QR Code CV" class="rounded-lg w-48">
             </a>
         </div>
 

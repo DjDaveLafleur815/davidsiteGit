@@ -14,13 +14,24 @@ services:
         networks:
             - app-network
         environment:
-            - MAIL_MAILER=smtp
-            - MAIL_HOST=mailpit
-            - MAIL_PORT=1025
-            - MAIL_FROM_ADDRESS=no-reply@example.com
-            - MAIL_FROM_NAME="${APP_NAME}"
+            - MAIL_MAILER=${MAIL_MAILER}
+            - MAIL_HOST=${MAIL_HOST}
+            - MAIL_PORT=${MAIL_PORT}
+            - MAIL_USERNAME=${MAIL_USERNAME}
+            - MAIL_PASSWORD=${MAIL_PASSWORD}
+            - MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
+            - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+            - MAIL_FROM_NAME=${MAIL_FROM_NAME}
+            - APP_NAME=${APP_NAME}
+            - DB_HOST=${DB_HOST}
+            - DB_PORT=${DB_PORT}
+            - DB_DATABASE=${DB_DATABASE}
+            - DB_USERNAME=${DB_USERNAME}
+            - DB_PASSWORD=${DB_PASSWORD}
+            - APP_KEY=${APP_KEY}
+            - APP_URL=${APP_URL}
 
-    # Service pour Mailpit
+    # Service pour Mailpit (si vous souhaitez tester en local avec Mailpit)
     mailpit:
         image: axllent/mailpit
         container_name: mailpit
@@ -30,13 +41,15 @@ services:
         networks:
             - app-network
 
-    # Base de données MySQL (si nécessaire)
+    # Base de données MySQL
     db:
         image: mysql:8
         container_name: mysql-db
         environment:
-            MYSQL_ROOT_PASSWORD: rootpassword
-            MYSQL_DATABASE: laravel
+            - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+            - MYSQL_DATABASE=${DB_DATABASE}
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PAsSSWORD=${DB_PASSWORD}
         volumes:
             - mysql_data:/var/lib/mysql
         networks:

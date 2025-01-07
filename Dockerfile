@@ -2,8 +2,21 @@
 FROM php:8.2-fpm
 
 # Installation des dépendances système
-RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git && \
-    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
+    git \
+    libssl-dev \
+    && apt-get clean
+
+# Installer l'extension MongoDB
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
+# Installer les extensions PHP nécessaires
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd pdo pdo_mysql
 
 # Installation de Composer

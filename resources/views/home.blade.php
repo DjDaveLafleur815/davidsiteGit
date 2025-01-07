@@ -107,19 +107,21 @@
     <!-- Conteneur principal -->
     <div class="flex flex-col items-center justify-center flex-grow relative z-10 w-full">
         <!-- Navigation -->
-        <nav class="my-8 fade-in flex justify-between items-center" style="animation-delay: 0.5s;">
-            <!-- Conteneur pour centrer le menu -->
-            <div class="flex-1 flex justify-center">
-                <!-- Menu principal -->
-                <ul class="flex space-x-6">
+        <nav class="my-8 fade-in grid grid-cols-1 md:grid-cols-3 items-center" style="animation-delay: 0.5s;">
+            <!-- Colonne vide (1ère colonne) -->
+            <div class="hidden md:block"></div>
+
+            <!-- Menu principal (2e colonne) -->
+            <div class="flex justify-center mb-4 md:mb-0">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
                     <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
                     <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
                     <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
                 </ul>
             </div>
 
-            <!-- Switcher de langues à droite du menu -->
-            <div class="flex space-x-2 ml-20 items-center">
+            <!-- Switcher de langues (3e colonne) -->
+            <div class="flex space-x-2 items-center justify-self-end">
                 <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
                 <span>|</span>
                 <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>
@@ -127,6 +129,10 @@
                 <a href="{{ url('locale/de') }}" class="text-sm hover:text-white font-semibold">DE</a>
             </div>
         </nav>
+
+
+
+
 
         <!-- Ligne décorative supérieure -->
         <div class="line fade-in w-full" style="animation-delay: 1s;"></div>

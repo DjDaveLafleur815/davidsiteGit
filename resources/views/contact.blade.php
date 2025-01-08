@@ -102,16 +102,15 @@
         <!-- Menu principal (2e colonne) : texte plus grand sur mobile -->
         <div class="flex justify-center mb-4 md:mb-0 text-base md:text-lg">
             <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-                    <li><a href="/" class="text-sm hover:text-white">@lang('messages.home')</a></li>
-                    <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
-                    <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
-                    <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
-                </ul>
+                <li><a href="/" class="text-sm hover:text-white">@lang('messages.home')</a></li>
+                <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
+                <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
+                <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
             </ul>
         </div>
 
         <!-- Switcher de langues (3e colonne) : texte plus grand sur mobile -->
-        <div class="flex justify-center md:justify-end items-center space-x-2 mt-4 md:mt-0 text-base md:text-lg">
+        <div class="flex justify-center md:mb-0 items-center space-x-2 mt-4 md:mt-0 text-base md:text-lg">
             <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
             <span>|</span>
             <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>

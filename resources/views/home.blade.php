@@ -106,7 +106,7 @@
 
     <!-- Conteneur principal -->
     <div class="flex flex-col items-center justify-center flex-grow relative z-10 w-full">
-    
+
     <!-- Navigation -->
     <nav class="my-8 fade-in grid grid-cols-1 md:grid-cols-3 md:gap-4 w-full" style="animation-delay: 0.5s;">
         <!-- Colonne vide (1ère colonne) : cachée sur mobile -->
@@ -122,7 +122,7 @@
         </div>
 
         <!-- Switcher de langues (3e colonne) : texte plus grand sur mobile -->
-        <div class="flex justify-center md:justify-end items-center space-x-2 mt-4 md:mt-0 text-base md:text-lg">
+        <div class="flex justify-center md:mb-0 items-center space-x-2 mt-4 md:mt-0 text-base md:text-lg">
             <a href="{{ url('locale/fr') }}" class="text-sm hover:text-white font-semibold">FR</a>
             <span>|</span>
             <a href="{{ url('locale/en') }}" class="text-sm hover:text-white font-semibold">EN</a>

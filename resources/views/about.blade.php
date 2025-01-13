@@ -142,12 +142,13 @@
             <h3 class="text-4xl font-bold text-white sm:text-6xl md:text-8xl">@lang('messages.titleAbout')</h3>
         </div>
 
-        <!-- Section Photo de Profil -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 my-16">
-            <div class="md:w-1/3 max-w-xs">
-                <img src="{{ asset('images/photoDeMoi.jpg') }}" class="rounded-lg shadow-md w-full h-auto object-cover hover:shadow-lg transition duration-300" alt="Photo de moi">
+        <div class="my-16 flex flex-col md:flex-row items-center justify-center gap-8">
+            <!-- Première colonne (photo) -->
+            <div class="md:w-1/2 flex justify-center items-center">
+                <img src="{{ asset('images/photoDeMoi.jpg') }}" class="rounded-lg shadow-md max-w-xs h-auto object-cover hover:shadow-lg transition duration-300" alt="Photo de moi">
             </div>
-            <div class="md:w-2/3 text-lg leading-relaxed text-justify">
+            <!-- Deuxième colonne (bio) -->
+            <div class="md:w-1/2 flex justify-center items-center text-lg leading-relaxed text-justify">
                 @lang('messages.bio')
             </div>
         </div>

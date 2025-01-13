@@ -2,7 +2,7 @@
 
 return [
     'home' => 'Empfang',
-    'about' => "Über",
+    'about' => "Über mich",
     "portfolio" => "Portfolio",
     "contact" => "Kontakt",
     'ANTOINE David' => 'ANTOINE David',
@@ -19,7 +19,7 @@ return [
     'h4PortfolioP3p' => '1. Solo-Projekt, das noch in der Entwicklung ist.',
     'h4PortfolioButton' => 'Mein Lebenslauf im PDF',
     'h4PortfolioButtonP' => 'Auch über den QR-Code auf der Startseite zugänglich.',
-    'bio' => 'Leidenschaftlich an Informatik, digitalen Technologien und Programmierung im Allgemeinen interessiert, habe ich eine STI2D-Ausbildung mit der Fachrichtung SIN (Computersysteme und digitale Systeme) absolviert. Ich habe die Grundlagen von HTML und CSS, Computernetzwerke, Binärcode mit einfachen Umrechnungen usw. gelernt. Von dort aus wurde die Idee, Webentwickler zu werden, für mich offensichtlich, besonders der Programmierungsbereich. Danach, nach dem Verlassen der Schule aus persönlichen Gründen, war ich Praktikant bei "Une Formation Pour Moi, c’est Possible ?" von OnlineFormaPRO in Dijon. Danach vergingen zwei Jahre Pandemie, in denen ich keine richtige Ausbildung fand, also nahm ich an verschiedenen Programmen teil, von Digital’Access über Fabrik Ton Parcours bis hin zur Garantie Jeune, der E2C (Schule der zweiten Chance) und dem Contrat Engagement Jeune. Nach Fabrik Ton Parcours (Vorbereitung auf Berufe in den Bereichen Sport, Animation und Digitales) begann ich schließlich eine Ausbildung zum Web- und Mobile-Entwickler bei Web Force 3, bei deren Abschluss ich ein Praktikum absolvierte, nämlich die Erstellung einer Website und die Integration von Sicherheitsvorgaben für meinen Musikverein, und erfolgreich den Berufstitel Web- und Mobile-Web-Entwickler Level 5 (BAC +2) erlangte. Nach dieser Ausbildung, auf Empfehlung des Prüfungsausschusses während der Prüfung des Berufstitels, folgte ich der Ausbildung zum Anwendungsentwickler, bei der ich dieses Praktikum im CIAD-Labor, einer Zweigstelle der Universität Bourgogne-Franche-Comté, absolvierte und erfolgreich das Zertifikat Anwendungsentwicklung erlangte, um dann ein Bachelor System- und Netzwerkadministrator. Ich bin auch seit fast 10 Jahren Musiker in einer Blaskapelle, Militärmusik, Harmonie und in verschiedenen Musikprojekten aller Art (Rock, Metal, Elektro usw...).',
+    'bio' => 'Leidenschaftlich für Informatik und Programmierung im Allgemeinen habe ich die Webentwicklung während meines STI2D-Studiums mit der Option SIN entdeckt. Nach verschiedenen Erfahrungen (Fabrik Ton Parcours, Garantie Jeune, E2C) absolvierte ich eine Ausbildung zum Web- und Mobile-Entwickler bei Web Force 3 (Berufstitel BAC+2) und anschließend eine Ausbildung zum Anwendungsdesigner und -entwickler. Diese Kurse ermöglichten es mir, technische Fähigkeiten und Zertifizierungen in der Web-, Mobil- und Desktop-Entwicklung zu erwerben. Ich bin außerdem seit fast 10 Jahren Musiker in Fanfarenzügen, Spielmannszügen, Harmonien und in verschiedenen musikalischen Projekten (Rock, Metal, Elektro usw.).',
     'h2text' => 'Die verschiedenen Sprachen, Frameworks und Arbeitsumgebungen, die ich verwenden kann :',
     'name' => 'Name :',
     'nameText' => 'Z.B.: Duchemin',

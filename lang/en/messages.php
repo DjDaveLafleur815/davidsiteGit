@@ -2,7 +2,7 @@
 
 return [
     'home' => 'Home',
-    'about' => "About",
+    'about' => "About of me",
     "portfolio"=> "Portfolio",
     "contact"=> "Contact",
     'ANTOINE David' => 'ANTOINE David',
@@ -19,7 +19,7 @@ return [
     'h4PortfolioP3p' => '1st solo project still under development.',
     'h4PortfolioButton' => 'My CV on PDF',
     'h4PortfolioButtonP' => 'Also you can scan QR Code on homepage.',
-    'bio' => 'Passionate about IT, digital technologies, and programming in general, I followed a STI2D track with an option in SIN (Computer and Digital Systems). I learned the basics of HTML and CSS, computer networking, binary code with basic conversions, etc. From there, the idea of becoming a web developer became obvious to me, especially the programming side. Then, after leaving school for personal reasons, I was an intern at "Une Formation Pour Moi, c’est Possible ?" by OnlineFormaPRO in Dijon. Afterward, two years of pandemic passed where I couldn’t find a proper training, so I participated in several programs, from Digital’Access to Fabrik Ton Parcours, including Garantie Jeune, E2C (Second Chance School), and the Contrat Engagement Jeune. After Fabrik Ton Parcours (preparation for jobs in sports, animation, and digital fields), I eventually started a Web and Mobile Developer training by Web Force 3, at the end of which I completed an internship, namely creating a website and integrating security recommendations for my music association, and successfully obtained the Professional Title Web and Mobile Web Developer Level 5 (BAC +2). After this training, based on the jury’s advice during the Professional Title exam, I followed the Application Developer training during which I completed this internship at the CIAD laboratory, a branch of the University of Bourgogne-Franche-Comté, where I successfully obtained the Application Development Certification and then moved on to a System and Network Administrator Bachelor. I have also been a musician in a brass band, military band, harmony orchestra, and in various musical projects for almost 10 years (rock, metal, electro, etc...).',
+    'bio' => 'Passionate about IT and programming in general, I discovered web development during my STI2D studies with a SIN option. After various experiences (Fabrik Ton Parcours, Garantie Jeune, E2C), I completed a Web and Mobile Developer training at Web Force 3 (BAC+2 Professional Title) and then an Application Designer and Developer training. These courses allowed me to acquire technical skills and certifications in web, mobile, and desktop development. I have also been a musician for nearly 10 years, participating in fanfare, drum corps, harmony, and various musical projects (rock, metal, electro, etc.).',
     'h2text' => 'The different languages, frameworks, and work environments that I am able to use:',
     'name' => 'Name :',
     'nameText' => 'Ex: Duchemin',

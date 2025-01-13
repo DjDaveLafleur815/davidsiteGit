@@ -115,7 +115,6 @@
         <!-- Menu principal (2e colonne) : texte plus grand sur mobile -->
         <div class="flex justify-center mb-4 md:mb-0 text-base md:text-lg">
             <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-                <li><a href="/a-propos" class="text-sm hover:text-white">@lang('messages.about')</a></li>
                 <li><a href="/portfolio" class="text-sm hover:text-white">@lang('messages.portfolio')</a></li>
                 <li><a href="/contact" class="text-sm hover:text-white">@lang('messages.contact')</a></li>
             </ul>
@@ -142,13 +141,23 @@
             </p>
         </div>
 
+    <!-- Section CV et Bouton À propos -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 my-16">
         <!-- Section CV -->
-        <div class="flex flex-col items-center my-8 fade-in" style="animation-delay: 3.5s;">
+        <div class="md:w-1/2 flex flex-col items-center">
             <h2 class="text-lg font-semibold">@lang('messages.cv')</h2>
             <a href="https://www.unitag.io/qrcode" class="mt-4">
                 <img src="https://davidantoine.zapto.org/images/cv2.png" alt="QR Code CV" class="rounded-lg w-48">
             </a>
         </div>
+
+        <!-- Bouton "À propos" -->
+        <div class="md:w-1/2 flex flex-col items-center">
+            <a href="/a-propos" class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition duration-300">
+                @lang('messages.about')
+            </a>
+        </div>
+    </div>
 
         <!-- Ligne décorative inférieure -->
         <div class="line fade-in w-full" style="animation-delay: 3s;"></div>
